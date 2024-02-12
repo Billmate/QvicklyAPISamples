@@ -1,3 +1,22 @@
+/**
+ * Qvickly
+ *
+ * Qvickly Payment API - Node.JS Class
+ *
+ * LICENSE: This source file is part of Qvickly Payment API, that is fully owned by Billmate AB
+ * This is not open source. For licensing queries, please contact Qvickly at support@qvickly.io.
+ *
+ * @category Qvickly
+ * @package PaymentAPI
+ * @author Thomas Björk <thomas.bjork@qvickly.io>
+ * @copyright 2013-2024 Billmate AB
+ * @license Proprietary and fully owned by Billmate AB
+ * @version 1.0.0
+ * @link http://www.qvickly.io
+ *
+ * History:
+ * 1.0.0 20240212 Thomas Björk: First version
+ */
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const crypto = require("crypto");

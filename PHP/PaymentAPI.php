@@ -12,7 +12,7 @@
  * @author Thomas Björk <thomas.bjork@qvickly.io>
  * @copyright 2013-2024 Billmate AB
  * @license Proprietary and fully owned by Billmate AB
- * @version 2.2.0
+ * @version 1.0.0
  * @link http://www.qvickly.io
  *
  * History:
