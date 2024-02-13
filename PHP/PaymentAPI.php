@@ -166,4 +166,4 @@ class PaymentAPI {
 
         print "'\n";
     }
-};
+}
