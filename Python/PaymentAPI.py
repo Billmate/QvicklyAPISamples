@@ -18,11 +18,13 @@
 #
 
 import json
+import hmac
 import hashlib
 import requests
+import time
 
 class PaymentAPI:
-    def __init__(self, id, key, ssl=True, test=False, debug=False, referer=None):
+    def __init__(self, id, key, ssl=True, test=False, debug=False, referer=None, language=None ):
         self.ID = id
         self.KEY = key
         self.URL = "api.qvickly.io"
@@ -31,6 +33,7 @@ class PaymentAPI:
         self.TEST = test
         self.DEBUG = debug
         self.REFERER = referer or []
+        self.LANGUAGE = language or "sv"
 
     def __call__(self, name, args):
         if not args:
@@ -41,13 +44,13 @@ class PaymentAPI:
         values = {
             "credentials": {
                 "id": self.ID,
-                "hash": self.hash(json.dumps(params)),
+                "hash": self.hash(params),
                 "version": "2.2.3",
                 "client": "Qvickly:2.2.0",
                 "serverdata": {**params, **dict(self.REFERER)},
                 "time": time.time(),
                 "test": "1" if self.TEST else "0",
-                "language": "",
+                "language": self.LANGUAGE,
             },
             "data": params,
             "function": function,
@@ -73,7 +76,7 @@ class PaymentAPI:
             response_array['data'] = json.loads(response['data'])
 
         if "credentials" in response_array:
-            hash_value = self.hash(json.dumps(response_array["data"]))
+            hash_value = self.hash(response_array["data"])
 
             if response_array["credentials"]["hash"] == hash_value:
                 return response_array["data"]
@@ -95,7 +98,12 @@ class PaymentAPI:
 
     def hash(self, args):
         self.out("TO BE HASHED DATA", args)
-        return hashlib.sha512(args.encode('utf-8')).hexdigest()
+        print(args)
+        dataString = json.dumps(args, separators=(',', ':'))
+        dataString = dataString.replace('/', '\\/')
+        print(dataString)
+        secretbytes = bytes(self.KEY, 'utf-8')
+        return hmac.new(secretbytes, dataString.encode("utf-8"), hashlib.sha512).hexdigest()
 
     def out(self, name, output):
         if not self.DEBUG:
