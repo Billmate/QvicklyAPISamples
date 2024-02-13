@@ -24,6 +24,7 @@ class PaymentAPI {
     private string $KEY;
     private string $URL = "api.qvickly.io";
     private string $MODE = "CURL";
+    private string $LANGUAGE = "sv";
     private bool $SSL = true;
     private bool $TEST = false;
     private bool $DEBUG = false;
@@ -35,16 +36,17 @@ class PaymentAPI {
         bool $ssl = true,
         bool $test = false,
         bool $debug = false,
+        string $language = "sv",
         array $referer = []
     ) {
         $this->ID = $id;
         $this->KEY = $key;
         defined('QVICKLY_CLIENT') || define('QVICKLY_CLIENT', "Qvickly:2.2.0");
         defined('QVICKLY_SERVER') || define('QVICKLY_SERVER', "2.2.3");
-        defined('QVICKLY_LANGUAGE') || define('QVICKLY_LANGUAGE', "");
         $this->SSL = $ssl;
         $this->DEBUG = $debug;
         $this->TEST = $test;
+        $this->LANGUAGE = $language;
         $this->REFERER = $referer;
     }
 
@@ -65,7 +67,7 @@ class PaymentAPI {
                 "serverdata" => array_merge($_SERVER, $this->REFERER),
                 "time" => microtime(true),
                 "test" => $this->TEST ? "1" : "0",
-                "language" => QVICKLY_LANGUAGE,
+                "language" => $this->LANGUAGE,
             ],
             "data" => $params,
             "function" => $function,
@@ -164,4 +166,4 @@ class PaymentAPI {
 
         print "'\n";
     }
-}
+};
