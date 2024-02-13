@@ -35,11 +35,6 @@ class PaymentAPI:
         self.REFERER = referer or []
         self.LANGUAGE = language or "sv"
 
-    def __call__(self, name, args):
-        if not args:
-            return None  # Function call should be skipped
-        return self.call(name, args)
-
     def call(self, function, params):
         values = {
             "credentials": {
