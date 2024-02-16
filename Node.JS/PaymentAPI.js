@@ -22,8 +22,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const crypto = require("crypto");
 const axios = require("axios");
 
-const CLIENT_NAME = ''
-const BASE_URI = ''
+const CLIENT_NAME = 'Qvickly:1.0.0'
+const BASE_URI = 'https://api.qvickly.io/'
 
 class QvicklyPaymentAPI {
     constructor(eid, secret, test = false) {
