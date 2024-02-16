@@ -19,7 +19,8 @@
  * 1.0.0 20240212 Thomas Björk: First version
  */
 
-class PaymentAPI {
+class PaymentAPI
+{
     private string $ID;
     private string $KEY;
     private string $URL = "api.qvickly.io";
@@ -50,14 +51,16 @@ class PaymentAPI {
         $this->REFERER = $referer;
     }
 
-    public function __call(string $name, array $args): mixed {
+    public function __call(string $name, array $args): mixed
+    {
         if (count($args) === 0) {
             return null; // Function call should be skipped
         }
         return $this->call($name, $args[0]);
     }
 
-    public function call(string $function, array $params): mixed {
+    public function call(string $function, array $params): mixed
+    {
         $values = [
             "credentials" => [
                 "id" => $this->ID,
@@ -84,7 +87,8 @@ class PaymentAPI {
         return $this->verify_hash($response);
     }
 
-    public function verify_hash(mixed $response): mixed {
+    public function verify_hash(mixed $response): mixed
+    {
         $response_array = is_array($response) ? $response : json_decode($response, true);
 
         if (!$response_array && !is_array($response)) {
@@ -109,7 +113,8 @@ class PaymentAPI {
         return array_map("utf8_decode", $response_array);
     }
 
-    public function curl(string $parameters): string {
+    public function curl(string $parameters): string
+    {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, "http" . ($this->SSL ? "s" : "") . "://" . $this->URL);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -146,12 +151,14 @@ class PaymentAPI {
         return $data;
     }
 
-    private function hash(string $args): string {
+    private function hash(string $args): string
+    {
         $this->out("TO BE HASHED DATA", $args);
         return hash_hmac('sha512', $args, $this->KEY);
     }
 
-    private function out(string $name, mixed $out): void {
+    private function out(string $name, mixed $out): void
+    {
         if (!$this->DEBUG) {
             return;
         }
