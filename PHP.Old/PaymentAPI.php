@@ -49,7 +49,7 @@ class PaymentAPI
     ) {
         $this->ID = $id;
         $this->KEY = $key;
-        defined("QVICKLY_CLIENT") || define("QVICKLY_CLIENT", "Qvickly:2.2.0");
+        defined("QVICKLY_CLIENT") || define("QVICKLY_CLIENT", "Qvickly:PHP5:2.2.0");
         defined("QVICKLY_SERVER") || define("QVICKLY_SERVER", "2.2.3");
         defined("QVICKLY_LANGUAGE") || define("QVICKLY_LANGUAGE", "");
         $this->SSL = $ssl;

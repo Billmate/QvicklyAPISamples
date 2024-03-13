@@ -47,7 +47,7 @@ public class PaymentAPI
         REFERER = referer ?? new Dictionary<string, string>();
 
         if (!REFERER.ContainsKey("QVICKLY_CLIENT"))
-            REFERER.Add("QVICKLY_CLIENT", "Qvickly:2.2.0");
+            REFERER.Add("QVICKLY_CLIENT", "Qvickly:CSharp:2.2.0");
 
         if (!REFERER.ContainsKey("QVICKLY_SERVER"))
             REFERER.Add("QVICKLY_SERVER", "2.2.3");

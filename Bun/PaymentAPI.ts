@@ -1,7 +1,8 @@
+import {createHmac} from "crypto";
 /**
  * Qvickly
  *
- * Qvickly Payment API - Node.JS Class
+ * Qvickly Payment API - Bun Class
  *
  * LICENSE: This source file is part of Qvickly Payment API, that is fully owned by Billmate AB
  * This is not open source. For licensing queries, please contact Qvickly at support@qvickly.io.
@@ -17,15 +18,15 @@
  * History:
  * 1.0.0 20240212 Thomas Björk: First version
  */
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const crypto = require("crypto");
-const axios = require("axios");
 
-const CLIENT_NAME = "Qvickly:Node:1.0.0";
+const CLIENT_NAME = "Qvickly:Bun:1.0.0";
 const BASE_URI = "https://api.qvickly.io/";
 
-class QvicklyPaymentAPI {
+export default class QvicklyPaymentAPI {
+  eid: string;
+  secret: string;
+  test: boolean;
+
   constructor(eid, secret, test = false) {
     this.eid = eid;
     this.secret = secret;
@@ -33,8 +34,7 @@ class QvicklyPaymentAPI {
   }
 
   hash(jsonEncodedRequestData) {
-    return crypto
-      .createHmac("sha512", this.secret)
+    return createHmac("sha512", this.secret)
       .update(jsonEncodedRequestData)
       .digest("hex");
   }
@@ -63,21 +63,24 @@ class QvicklyPaymentAPI {
     };
     let responseRaw;
     try {
-      responseRaw = await axios.default.post(BASE_URI, requestData, {
-        withCredentials: true,
-        headers: headers,
-        transformResponse: (res) => res,
+      responseRaw = await fetch(BASE_URI,{
+        method: "POST",
+        body: requestData,
+        // withCredentials: true,
+        headers: headers as Record<string, any>,
+        //transformResponse: (res) => res,
       });
     } catch (error) {
       throw new Error(error.message);
     }
-    const response = JSON.parse(responseRaw.data);
+    const responseText = await responseRaw.text();
+    const response = JSON.parse(responseText);
     if (response.code > 0) {
       throw new Error(`${response.code} - ${response.message}`);
     } else {
-      const tobeHashed = responseRaw.data.substring(
-        responseRaw.data.indexOf('"data":') + 7,
-        responseRaw.data.length - 1
+      const tobeHashed = responseText.substring(
+        responseText.indexOf('"data":') + 7,
+        responseText.length - 1
       );
       /* istanbul ignore next */
       if (response.credentials.hash !== this.hash(tobeHashed)) {
@@ -85,8 +88,7 @@ class QvicklyPaymentAPI {
           `9090 - Response credentials hash does not match the expected hash.`
         );
       }
-      return response.data;
+      return response;
     }
   }
 }
-exports.default = QvicklyPaymentAPI;

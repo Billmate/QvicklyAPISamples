@@ -41,7 +41,7 @@ class PaymentAPI:
                 "id": self.ID,
                 "hash": self.hash(params),
                 "version": "2.2.3",
-                "client": "Qvickly:2.2.0",
+                "client": "Qvickly:Python:1.0.0",
                 "serverdata": {**params, **dict(self.REFERER)},
                 "time": time.time(),
                 "test": "1" if self.TEST else "0",
