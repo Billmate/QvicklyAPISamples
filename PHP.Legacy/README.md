@@ -1,6 +1,6 @@
-# PHP (Deprecated)
+# PHP Legacy
 
-Older PHP code written for PHP5.
+Legacy PHP code written for PHP5.
 
 ## Libraries
 
