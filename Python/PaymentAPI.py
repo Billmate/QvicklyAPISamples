@@ -40,7 +40,7 @@ class PaymentAPI:
             "credentials": {
                 "id": self.ID,
                 "hash": self.hash(params),
-                "version": "2.2.3",
+                "version": "2.3.0",
                 "client": "Qvickly:Python:1.0.0",
                 "serverdata": {**params, **dict(self.REFERER)},
                 "time": time.time(),

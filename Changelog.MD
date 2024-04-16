@@ -10,4 +10,8 @@ Initial release
 - Converted PHP old style code to C# code
 - Converted PHP old style code to Node.JS code
 
-No code is currently tested.
+No code is currently fully tested.
+
+## 2024-04-16
+
+Updated API_VERSION to 2.3.0

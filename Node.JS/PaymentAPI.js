@@ -23,6 +23,7 @@ const crypto = require("crypto");
 const axios = require("axios");
 
 const CLIENT_NAME = "Qvickly:Node:1.0.0";
+const API_VERSION = "2.3.0";
 const BASE_URI = "https://api.qvickly.io/";
 
 class QvicklyPaymentAPI {
@@ -43,7 +44,7 @@ class QvicklyPaymentAPI {
     const credentials = {
       id: this.eid,
       hash: this.hash(JSON.stringify(data)),
-      version: "2.3.0",
+      version: API_VERSION,
       client: CLIENT_NAME,
       language: "sv",
       test: false,
