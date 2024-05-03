@@ -73,7 +73,7 @@ class PaymentAPI:
             hash_value = self.hash(response_array["data"])
 
             if response_array["credentials"]["hash"] == hash_value:
-                return response_array["data"]
+                return response_array
             else:
                 return {"code": 9511, "message": "Verification error", "hash": hash_value,
                         "hash_received": response_array["credentials"]["hash"]}
