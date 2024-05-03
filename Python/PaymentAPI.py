@@ -35,19 +35,18 @@ class PaymentAPI:
         self.REFERER = referer or []
         self.LANGUAGE = language or "sv"
 
-    def call(self, function, params):
+    def call(self, function, data):
         values = {
             "credentials": {
                 "id": self.ID,
-                "hash": self.hash(params),
+                "hash": self.hash(data),
                 "version": "2.3.0",
                 "client": "Qvickly:Python:1.0.0",
-                "serverdata": {**params, **dict(self.REFERER)},
                 "time": time.time(),
                 "test": "1" if self.TEST else "0",
                 "language": self.LANGUAGE,
             },
-            "data": params,
+            "data": data,
             "function": function,
         }
         self.out("CALLED FUNCTION", function)
@@ -93,10 +92,8 @@ class PaymentAPI:
 
     def hash(self, args):
         self.out("TO BE HASHED DATA", args)
-        print(args)
         dataString = json.dumps(args, separators=(',', ':'))
         dataString = dataString.replace('/', '\\/')
-        print(dataString)
         secretbytes = bytes(self.KEY, 'utf-8')
         return hmac.new(secretbytes, dataString.encode("utf-8"), hashlib.sha512).hexdigest()
 
