@@ -2,10 +2,13 @@
 
 ## PaymentAPI
 
-| Function                               | Description                                                                |
-| -------------------------------------- | -------------------------------------------------------------------------- |
-| [getAddress](PaymentAPI/getAddress.py) | Get address information based on (swedish) personal indentification number |
-| [addPayment](PaymentAPI/addPayment.py) | Create a payment                                                           |
+| Function                                     | Description                                                                |
+| -------------------------------------------- | -------------------------------------------------------------------------- |
+| [getAddress](PaymentAPI/getAddress.py)       | Get address information based on (swedish) personal indentification number |
+| [addPayment](PaymentAPI/addPayment.py)       | Create a payment                                                           |
+| [activatePayment](PaymentAPI/addPayment.py)  | Create a payment                                                           |
+| [cancelPayment](PaymentAPI/cancelPayment.py) | Cancel a payment                                                           |
+| [creditPayment](PaymentAPI/creditPayment.py) | Credit a payment                                                           |
 
 ### .env
 
