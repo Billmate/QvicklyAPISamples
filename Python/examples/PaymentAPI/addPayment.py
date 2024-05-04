@@ -15,7 +15,7 @@ from PaymentAPI import PaymentAPI
 api = PaymentAPI(eid, secret, test=True)
 paymentPayload = {
     "PaymentData": {
-        "method": "512",
+        "method": "8",
         "currency": "SEK",
         "language": "sv",
         "country": "SE",

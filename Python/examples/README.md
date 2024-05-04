@@ -2,10 +2,10 @@
 
 ## PaymentAPI
 
-| Function                    | Description                                                                |
-| --------------------------- | -------------------------------------------------------------------------- |
-| [getAddress](getAddress.py) | Get address information based on (swedish) personal indentification number |
-| [addPayment](addPayment.py) | Create a payment                                                           |
+| Function                               | Description                                                                |
+| -------------------------------------- | -------------------------------------------------------------------------- |
+| [getAddress](PaymentAPI/getAddress.py) | Get address information based on (swedish) personal indentification number |
+| [addPayment](PaymentAPI/addPayment.py) | Create a payment                                                           |
 
 ### .env
 
