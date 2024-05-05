@@ -2,6 +2,6 @@
 
 ## Libraries
 
-| Lib                          | Version | Status             | Description |
-| ---------------------------- | ------- | ------------------ | ----------- |
-| [Payment API](PaymentAPI.py) | 1.0.0   | Basic testing done |             |
+| Lib                          | Version | Status                                  | Description |
+| ---------------------------- | ------- | --------------------------------------- | ----------- |
+| [Payment API](PaymentAPI.py) | 1.0.0   | 25/27 functions are tested and verified |             |
