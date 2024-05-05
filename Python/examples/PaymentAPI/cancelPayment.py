@@ -12,6 +12,6 @@ secret = os.getenv("SECRET")
 from PaymentAPI import PaymentAPI
 
 # Create a PaymentAPI object
-api = PaymentAPI(eid, secret, debug=True)
+api = PaymentAPI(eid, secret)
 payment = api.call(function="cancelPayment", data={"number":"4003208"})
 print(json.dumps(payment, indent=4))

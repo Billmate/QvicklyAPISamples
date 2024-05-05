@@ -35,7 +35,9 @@ class PaymentAPI:
         self.REFERER = referer or []
         self.LANGUAGE = language or "sv"
 
-    def call(self, function, data):
+    def call(self, function, data = None):
+        if data is None:
+            data = { "dummyData": time.time_ns() }
         values = {
             "credentials": {
                 "id": self.ID,
@@ -60,8 +62,11 @@ class PaymentAPI:
         return self.verify_hash(response)
 
     def verify_hash(self, response):
-        response_array = response if isinstance(response, dict) else json.loads(response)
-
+        try:
+            response_array = response if isinstance(response, dict) else json.loads(response)
+        except json.JSONDecodeError:
+            return response
+        
         if not response_array and not isinstance(response, dict):
             return response
 
@@ -100,8 +105,8 @@ class PaymentAPI:
     def out(self, name, output):
         if not self.DEBUG:
             return
-
-        print(f"{name}: '{output}'")
+        joutput = json.dumps(output, indent=4)
+        print(f"{name}: '{joutput}'")
 
 
 # # Example usage:

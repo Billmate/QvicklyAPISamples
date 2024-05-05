@@ -12,7 +12,7 @@ secret = os.getenv("SECRET")
 from PaymentAPI import PaymentAPI
 
 # Create a PaymentAPI object
-api = PaymentAPI(eid, secret, test=True)
+api = PaymentAPI(eid, secret)
 paymentPayload = {
     "PaymentData": {
         "method": "8",
