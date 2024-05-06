@@ -10,25 +10,25 @@
 | [cancelPayment](PaymentAPI/cancelPayment.py)                           | Cancel a payment                                                           |
 | [creditPayment](PaymentAPI/creditPayment.py)                           | Credit a payment                                                           |
 | [partCreditPayment](PaymentAPI/partCreditPayment.py)                   | Partially credit a payment                                                 |
-| [getAccountInfo](PaymentAPI/getAccountInfo.py)                         |                                                                            |
-| [getTerms](PaymentAPI/getTerms.py)                                     |                                                                            |
-| [getPaymentPlans](PaymentAPI/getPaymentPlans.py)                       |                                                                            |
-| [getPaymentInfo](PaymentAPI/getPaymentInfo.py)                         |                                                                            |
-| [getDuePayments](PaymentAPI/getDuePayments.py)                         |                                                                            |
-| [getSettlements](PaymentAPI/getSettlements.py)                         |                                                                            |
-| [getSettlementsWithDetails](PaymentAPI/getSettlementsWithDetails.py)   |                                                                            |
-| [getCustomersByName](PaymentAPI/getCustomersByName.py)                 |                                                                            |
-| [getMerchantByOrgnum](PaymentAPI/getMerchantByOrgnum.py)               |                                                                            |
-| [getInvoicesByPno](PaymentAPI/getInvoicesByPno.py)                     |                                                                            |
-| [getInvoicesByCustomer](PaymentAPI/getInvoicesByCustomer.py)           |                                                                            |
-| [getExchangeRate](PaymentAPI/getExchangeRate.py)                       |                                                                            |
-| [getVatRate](PaymentAPI/getVatRate.py)                                 |                                                                            |
-| [getFees](PaymentAPI/getFees.py)                                       |                                                                            |
-| [crediflowSearchParty](PaymentAPI/crediflowSearchParty.py)             |                                                                            |
-| [getOrderByHash](PaymentAPI/getOrderByHash.py)                         |                                                                            |
-| [getInvoiceByHash](PaymentAPI/getInvoiceByHash.py)                     |                                                                            |
-| [createInvoiceFromOrderHash](PaymentAPI/createInvoiceFromOrderHash.py) |                                                                            |
-| [getAPICredentials](PaymentAPI/getAPICredentials.py)                   |                                                                            |
+| [getAccountInfo](PaymentAPI/getAccountInfo.py)                         | Get account information                                                    |
+| [getTerms](PaymentAPI/getTerms.py)                                     | Get terms                                                                  |
+| [getPaymentPlans](PaymentAPI/getPaymentPlans.py)                       | Get payment plans                                                          |
+| [getPaymentInfo](PaymentAPI/getPaymentInfo.py)                         | Get payment information                                                    |
+| [getDuePayments](PaymentAPI/getDuePayments.py)                         | Get due payments                                                           |
+| [getSettlements](PaymentAPI/getSettlements.py)                         | Getsettlements                                                             |
+| [getSettlementsWithDetails](PaymentAPI/getSettlementsWithDetails.py)   | Get a detailed settlement.                                                 |
+| [getCustomersByName](PaymentAPI/getCustomersByName.py)                 | Get customers by name                                                      |
+| [getMerchantByOrgnum](PaymentAPI/getMerchantByOrgnum.py)               | Get merchant by orgnum                                                     |
+| [getInvoicesByPno](PaymentAPI/getInvoicesByPno.py)                     | Get invoices by pno                                                        |
+| [getInvoicesByCustomer](PaymentAPI/getInvoicesByCustomer.py)           | Get invoices by customer                                                   |
+| [getExchangeRate](PaymentAPI/getExchangeRate.py)                       | Get exchange rate for currency                                             |
+| [getVatRate](PaymentAPI/getVatRate.py)                                 | Get VAT rate by country.                                                   |
+| [getFees](PaymentAPI/getFees.py)                                       | Get fees                                                                   |
+| [crediflowSearchParty](PaymentAPI/crediflowSearchParty.py)             | Perform a crediflow search                                                 |
+| [getOrderByHash](PaymentAPI/getOrderByHash.py)                         | Get a order by hash                                                        |
+| [getInvoiceByHash](PaymentAPI/getInvoiceByHash.py)                     | Get an invoice by hash                                                     |
+| [createInvoiceFromOrderHash](PaymentAPI/createInvoiceFromOrderHash.py) | Create invoice from order hash                                             |
+| [getAPICredentials](PaymentAPI/getAPICredentials.py)                   | Get API credentials                                                        |
 
 ### .env
 
