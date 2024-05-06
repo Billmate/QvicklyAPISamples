@@ -2,6 +2,6 @@
 
 ## PaymentAPI
 
-| Function                        | Description         |
-| ------------------------------- | ------------------- |
-| [Examples](examples/PaymentAPI) | PaymentAPI examples |
+| Function               | Description         |
+| ---------------------- | ------------------- |
+| [Examples](PaymentAPI) | PaymentAPI examples |
