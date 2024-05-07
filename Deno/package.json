@@ -1,0 +1,27 @@
+{
+  "name": "qvickly.ts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Basic implementations for Qvickly products",
+  "main": "qvickly.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example-getAddress": "deno run --allow-read --allow-net examples/PaymentAPI/getAddress.ts",
+    "example-addPayment": "deno run examples/PaymentAPI/addPayment.ts",
+    "example-activatePayment": "deno run examples/PaymentAPI/activatePayment.ts",
+    "example-creditPayment": "deno run examples/PaymentAPI/creditPayment.ts",
+    "example-cancelPayment": "deno run examples/PaymentAPI/cancelPayment.ts",
+    "example-updatePayment": "deno run examples/PaymentAPI/updatePayment.ts",
+    "example-getAccountInfo": "deno run examples/PaymentAPI/getAccountInfo.ts",
+    "example-getTerms": "deno run examples/PaymentAPI/getTerms.ts",
+    "example-getPaymentPlans": "deno run examples/PaymentAPI/getPaymentPlans.ts",
+    "example-getPaymentInfo": "deno run examples/PaymentAPI/getPaymentInfo.ts",
+    "example-getDuePayments": "deno run examples/PaymentAPI/getDuePayments.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  }
+}

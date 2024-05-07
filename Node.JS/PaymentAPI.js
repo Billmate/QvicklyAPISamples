@@ -18,12 +18,14 @@
  * 1.0.0 20240212 Thomas Björk: First version
  */
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const crypto = require("crypto");
-const axios = require("axios");
+
+import crypto from "crypto";
+import axios from "axios";
+import env from "dotenv";
+env.config();
 
 const CLIENT_NAME = "Qvickly:Node:1.0.0";
-const API_VERSION = "2.3.0";
+const API_VERSION = "2.5.0";
 const BASE_URI = "https://api.qvickly.io/";
 
 class QvicklyPaymentAPI {
@@ -40,7 +42,12 @@ class QvicklyPaymentAPI {
       .digest("hex");
   }
 
-  async call(func, data, extraHeaders = {}) {
+  async call(func, data = null, extraHeaders = {}) {
+    if (data === null) {
+      data = {
+        dummyData: "dummy",
+      };
+    }
     const credentials = {
       id: this.eid,
       hash: this.hash(JSON.stringify(data)),
@@ -72,7 +79,13 @@ class QvicklyPaymentAPI {
     } catch (error) {
       throw new Error(error.message);
     }
-    const response = JSON.parse(responseRaw.data);
+    let response;
+    try {
+      response = JSON.parse(responseRaw.data);
+    } catch (error) {
+      return responseRaw.data;
+    }
+
     if (response.code > 0) {
       throw new Error(`${response.code} - ${response.message}`);
     } else {
@@ -86,8 +99,8 @@ class QvicklyPaymentAPI {
           `9090 - Response credentials hash does not match the expected hash.`
         );
       }
-      return response.data;
+      return response;
     }
   }
 }
-exports.default = QvicklyPaymentAPI;
+export { QvicklyPaymentAPI };

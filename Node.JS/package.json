@@ -1,14 +1,41 @@
 {
   "name": "qvickly.js",
   "version": "1.0.0",
+  "type": "module",
   "description": "Basic implementations for Qvickly products",
   "main": "qvickly.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example-getAddress": "node examples/PaymentAPI/getAddress.js",
+    "example-addPayment": "node examples/PaymentAPI/addPayment.js",
+    "example-activatePayment": "node examples/PaymentAPI/activatePayment.js",
+    "example-creditPayment": "node examples/PaymentAPI/creditPayment.js",
+    "example-cancelPayment": "node examples/PaymentAPI/cancelPayment.js",
+    "example-updatePayment": "node examples/PaymentAPI/updatePayment.js",
+    "example-getAccountInfo": "node examples/PaymentAPI/getAccountInfo.js",
+    "example-getTerms": "node examples/PaymentAPI/getTerms.js",
+    "example-getPaymentPlans": "node examples/PaymentAPI/getPaymentPlans.js",
+    "example-getPaymentInfo": "node examples/PaymentAPI/getPaymentInfo.js",
+    "example-getDuePayments": "node examples/PaymentAPI/getDuePayments.js",
+    "example-getSettlements": "node examples/PaymentAPI/getSettlements.js",
+    "example-getSettlementsWithDetails": "node examples/PaymentAPI/getSettlementsWithDetails.js",
+    "example-getCustomersByName": "node examples/PaymentAPI/getCustomersByName.js",
+    "example-getMerchantByOrgnum": "node examples/PaymentAPI/getMerchantByOrgnum.js",
+    "example-getInvoicesByPno": "node examples/PaymentAPI/getInvoicesByPno.js",
+    "example-getInvoicesByCustomer": "node examples/PaymentAPI/getInvoicesByCustomer.js",
+    "example-getExchangeRate": "node examples/PaymentAPI/getExchangeRate.js",
+    "example-getVatRate": "node examples/PaymentAPI/getVatRate.js",
+    "example-getFees": "node examples/PaymentAPI/getFees.js",
+    "example-crediflowSearchParty": "node examples/PaymentAPI/crediflowSearchParty.js",
+    "example-getOrderByHash": "node examples/PaymentAPI/getOrderByHash.js",
+    "example-getInvoiceByHash": "node examples/PaymentAPI/getInvoiceByHash.js",
+    "example-createInvoiceFromOrderHash": "node examples/PaymentAPI/createInvoiceFromOrderHash.js",
+    "example-getAPICredentials": "node examples/PaymentAPI/getAPICredentials.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.7"
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
   }
 }

@@ -19,10 +19,14 @@
  */
 
 import { hmac } from "https://denopkg.com/chiefbiiko/hmac/mod.ts";
+import { load } from "https://deno.land/std@0.224.0/dotenv/mod.ts";
+
+const env = await load();
 
 const CLIENT_NAME = 'Qvickly:Deno:1.0.0'
-const API_VERSION = '2.3.0'
+const API_VERSION = '2.5.0'
 const BASE_URI = 'https://api.qvickly.io/'
+
 
 class QvicklyPaymentAPI {
     eid: string;
@@ -81,9 +85,10 @@ class QvicklyPaymentAPI {
             if (response.credentials.hash !== this.hash(tobeHashed)) {
                 throw new Error(`9090 - Response credentials hash does not match the expected hash.`);
             }
-            return response.data;
+            return response;
         }
     }
 }
 
 export default QvicklyPaymentAPI;
+export { QvicklyPaymentAPI, env };

@@ -20,7 +20,7 @@ import {createHmac} from "crypto";
  */
 
 const CLIENT_NAME = "Qvickly:Bun:1.0.0";
-const API_VERSION = "2.3.0";
+const API_VERSION = "2.5.0";
 const BASE_URI = "https://api.qvickly.io/";
 
 export default class QvicklyPaymentAPI {

@@ -1,0 +1,30 @@
+{
+  "name": "qvickly.ts",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Basic implementations for Qvickly products",
+  "main": "qvickly.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example-getAddress": "bun run examples/PaymentAPI/getAddress.ts",
+    "example-addPayment": "bun run examples/PaymentAPI/addPayment.ts",
+    "example-activatePayment": "bun run examples/PaymentAPI/activatePayment.ts",
+    "example-creditPayment": "bun run examples/PaymentAPI/creditPayment.ts",
+    "example-cancelPayment": "bun run examples/PaymentAPI/cancelPayment.ts",
+    "example-updatePayment": "bun run examples/PaymentAPI/updatePayment.ts",
+    "example-getAccountInfo": "bun run examples/PaymentAPI/getAccountInfo.ts",
+    "example-getTerms": "bun run examples/PaymentAPI/getTerms.ts",
+    "example-getPaymentPlans": "bun run examples/PaymentAPI/getPaymentPlans.ts",
+    "example-getPaymentInfo": "bun run examples/PaymentAPI/getPaymentInfo.ts",
+    "example-getDuePayments": "bun run examples/PaymentAPI/getDuePayments.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.9"
+  }
+}
