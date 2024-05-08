@@ -40,7 +40,12 @@ export default class QvicklyPaymentAPI {
       .digest("hex");
   }
 
-  async call(func, data, extraHeaders = {}) {
+  async call(func, data = null, extraHeaders = {}) {
+    if (!data) {
+      data = {
+        dummyData: "dummy",
+      };
+    }
     const credentials = {
       id: this.eid,
       hash: this.hash(JSON.stringify(data)),
@@ -75,7 +80,14 @@ export default class QvicklyPaymentAPI {
       throw new Error(error.message);
     }
     const responseText = await responseRaw.text();
-    const response = JSON.parse(responseText);
+
+    let response;
+    try {
+      response = JSON.parse(responseText);
+    } catch (error) {
+      return responseText;
+    }
+
     if (response.code > 0) {
       throw new Error(`${response.code} - ${response.message}`);
     } else {

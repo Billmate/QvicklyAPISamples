@@ -16,7 +16,21 @@
     "example-getTerms": "bun run examples/PaymentAPI/getTerms.ts",
     "example-getPaymentPlans": "bun run examples/PaymentAPI/getPaymentPlans.ts",
     "example-getPaymentInfo": "bun run examples/PaymentAPI/getPaymentInfo.ts",
-    "example-getDuePayments": "bun run examples/PaymentAPI/getDuePayments.ts"
+    "example-getDuePayments": "bun run examples/PaymentAPI/getDuePayments.ts",
+    "example-getSettlements": "bun run examples/PaymentAPI/getSettlements.js",
+    "example-getSettlementsWithDetails": "bun run examples/PaymentAPI/getSettlementsWithDetails.js",
+    "example-getCustomersByName": "bun run examples/PaymentAPI/getCustomersByName.js",
+    "example-getMerchantByOrgnum": "bun run examples/PaymentAPI/getMerchantByOrgnum.js",
+    "example-getInvoicesByPno": "bun run examples/PaymentAPI/getInvoicesByPno.js",
+    "example-getInvoicesByCustomer": "bun run examples/PaymentAPI/getInvoicesByCustomer.js",
+    "example-getExchangeRate": "bun run examples/PaymentAPI/getExchangeRate.js",
+    "example-getVatRate": "bun run examples/PaymentAPI/getVatRate.js",
+    "example-getFees": "bun run examples/PaymentAPI/getFees.js",
+    "example-crediflowSearchParty": "bun run examples/PaymentAPI/crediflowSearchParty.js",
+    "example-getOrderByHash": "bun run examples/PaymentAPI/getOrderByHash.js",
+    "example-getInvoiceByHash": "bun run examples/PaymentAPI/getInvoiceByHash.js",
+    "example-createInvoiceFromOrderHash": "bun run examples/PaymentAPI/createInvoiceFromOrderHash.js",
+    "example-getAPICredentials": "bun run examples/PaymentAPI/getAPICredentials.js"
   },
   "author": "",
   "license": "ISC",
@@ -25,6 +39,7 @@
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
-    "@types/node": "^20.12.9"
+    "@types/node": "^20.12.9",
+    "bun-types": "^1.1.7"
   }
 }
