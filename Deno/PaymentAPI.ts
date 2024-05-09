@@ -18,8 +18,8 @@
  * 1.0.0 20240313 Thomas Björk: First version
  */
 
-import { hmac } from "https://denopkg.com/chiefbiiko/hmac/mod.ts";
-import { load } from "https://deno.land/std@0.224.0/dotenv/mod.ts";
+import { hmac } from "https://deno.land/x/hmac/mod.ts";
+import { load } from "https://deno.land/std/dotenv/mod.ts";
 
 const env = await load();
 
@@ -94,7 +94,10 @@ class QvicklyPaymentAPI {
             throw new Error(`${response.code} - ${response.message}`);
         }
         else {
-            const tobeHashed = JSON.stringify(response.data);
+            const tobeHashed = responseText.substring(
+                responseText.indexOf('"data":') + 7,
+                responseText.length - 1
+            );
             if (response.credentials.hash !== this.hash(tobeHashed)) {
                 throw new Error(`9090 - Response credentials hash does not match the expected hash.`);
             }
