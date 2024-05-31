@@ -4,3 +4,6 @@ test.js
 test.ts
 .env
 __pycache__
+composer.lock
+vendor
+PHP/Makefile

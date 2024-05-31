@@ -39,7 +39,7 @@ class PaymentAPI
     var $TEST = false;
     var $DEBUG = false;
     var $REFERER = false;
-    function PaymentAPI(
+    public function __construct(
         $id,
         $key,
         $ssl = true,
@@ -72,7 +72,7 @@ class PaymentAPI
                 "hash" => $this->hash(json_encode($params)),
                 "version" => QVICKLY_SERVER,
                 "client" => QVICKLY_CLIENT,
-                "serverdata" => array_merge($_SERVER, $this->REFERER),
+                "serverdata" => $this->REFERER ? array_merge($_SERVER, $this->REFERER) : $_SERVER,
                 "time" => microtime(true),
                 "test" => $this->TEST ? "1" : "0",
                 "language" => QVICKLY_LANGUAGE,
