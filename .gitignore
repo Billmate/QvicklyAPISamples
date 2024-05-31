@@ -3,3 +3,4 @@ Rust
 test.js
 test.ts
 .env
+__pycache__
