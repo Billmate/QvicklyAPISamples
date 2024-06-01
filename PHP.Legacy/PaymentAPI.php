@@ -12,7 +12,7 @@
  * @author Thomas Björk <thomas.bjork@qvickly.io>
  * @copyright 2013-2024 Billmate AB
  * @license Proprietary and fully owned by Billmate AB
- * @version 2.2.0
+ * @version 2.2.1
  * @link http://www.qvickly.io
  *
  * History:
@@ -48,8 +48,8 @@ class PaymentAPI
     ) {
         $this->ID = $id;
         $this->KEY = $key;
-        defined("QVICKLY_CLIENT") || define("QVICKLY_CLIENT", "Qvickly:PHPLegacy:2.2.0");
-        defined("QVICKLY_SERVER") || define("QVICKLY_SERVER", "2.3.0");
+        defined("QVICKLY_CLIENT") || define("QVICKLY_CLIENT", "Qvickly:PHPLegacy:2.2.1");
+        defined("QVICKLY_SERVER") || define("QVICKLY_SERVER", "2.5.0");
         defined("QVICKLY_LANGUAGE") || define("QVICKLY_LANGUAGE", "");
         $this->DEBUG = $debug;
         $this->TEST = $test;
