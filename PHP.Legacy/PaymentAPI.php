@@ -28,6 +28,7 @@
  * 2.1.7 20150922 Yuksel Findik: PHP Notice for CURLOPT_SSL_VERIFYHOST is fixed
  * 2.1.8 20151103 Yuksel Findik: CURLOPT_CONNECTTIMEOUT is added
  * 2.2.0 20240212 Thomas Björk: Rebranded och fixed code
+ * 2.2.1 20240601 Thomas Björk: Removed SSL option
  */
 class PaymentAPI
 {
@@ -35,14 +36,12 @@ class PaymentAPI
     var $KEY = "";
     var $URL = "api.qvickly.io";
     var $MODE = "CURL";
-    var $SSL = true;
     var $TEST = false;
     var $DEBUG = false;
     var $REFERER = false;
     public function __construct(
         $id,
         $key,
-        $ssl = true,
         $test = false,
         $debug = false,
         $referer = []
@@ -52,7 +51,6 @@ class PaymentAPI
         defined("QVICKLY_CLIENT") || define("QVICKLY_CLIENT", "Qvickly:PHPLegacy:2.2.0");
         defined("QVICKLY_SERVER") || define("QVICKLY_SERVER", "2.3.0");
         defined("QVICKLY_LANGUAGE") || define("QVICKLY_LANGUAGE", "");
-        $this->SSL = $ssl;
         $this->DEBUG = $debug;
         $this->TEST = $test;
         $this->REFERER = $referer;
@@ -128,39 +126,12 @@ class PaymentAPI
         curl_setopt(
             $ch,
             CURLOPT_URL,
-            "http" . ($this->SSL ? "s" : "") . "://" . $this->URL
+            "https://" . $this->URL
         );
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, $this->SSL);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
-        $vh = $this->SSL
-            ? (function_exists("phpversion") &&
-            function_exists("version_compare") &&
-            version_compare(phpversion(), "5.4", ">=")
-                ? 2
-                : true)
-            : false;
-        if ($this->SSL) {
-            if (
-                function_exists("phpversion") &&
-                function_exists("version_compare")
-            ) {
-                $cv = curl_version();
-                if (
-                    version_compare(phpversion(), "5.4", ">=") ||
-                    version_compare($cv["version"], "7.28.1", ">=")
-                ) {
-                    $vh = 2;
-                } else {
-                    $vh = true;
-                }
-            } else {
-                $vh = true;
-            }
-        } else {
-            $vh = false;
-        }
-        @curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, $vh);
+        @curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($ch, CURLOPT_HTTPHEADER, [
             "Content-Type: application/json",
             "Content-Length: " . strlen($parameters),

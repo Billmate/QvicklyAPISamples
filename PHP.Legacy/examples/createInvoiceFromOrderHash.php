@@ -13,23 +13,9 @@ define("QVICKLY_LANGUAGE", "sv");
 $api = new PaymentAPI($id, $key, $test, $debug);
 $values = array();
 
-/* Payment Data */
-/**
-* @param array Payment Data : Buyer details.
-  */
-
-  $values["PaymentData"] = array(
-    "method" => "1",
-    "paymentplanid" => ""
-);
-/**
-* @param array Cart Data : Cart details.
-  */
-
-$values["Cart"] = array(
-    "Total" => array(
-        "withtax" => "231700"
-    )
+$values["PaymentData"] = array(
+    "hash" => "123456abc123456abc123456abc12345",
+    "method" => "8"
 );
 
-echo $api->getTerms($values);
+print_r($api->createInvoiceFromOrderHash($values));

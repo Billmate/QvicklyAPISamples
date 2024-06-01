@@ -13,23 +13,9 @@ define("QVICKLY_LANGUAGE", "sv");
 $api = new PaymentAPI($id, $key, $test, $debug);
 $values = array();
 
-/* Payment Data */
-/**
-* @param array Payment Data : Buyer details.
-  */
-
-  $values["PaymentData"] = array(
-    "method" => "1",
-    "paymentplanid" => ""
-);
-/**
-* @param array Cart Data : Cart details.
-  */
-
-$values["Cart"] = array(
-    "Total" => array(
-        "withtax" => "231700"
-    )
+$values = array(
+    "pno" => "0000000000",
+    "status" => "Sent,Paid"
 );
 
-echo $api->getTerms($values);
+print_r($api->getInvoicesByPno($values));

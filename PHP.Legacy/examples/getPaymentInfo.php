@@ -18,18 +18,8 @@ $values = array();
 * @param array Payment Data : Buyer details.
   */
 
-  $values["PaymentData"] = array(
-    "method" => "1",
-    "paymentplanid" => ""
-);
-/**
-* @param array Cart Data : Cart details.
-  */
-
-$values["Cart"] = array(
-    "Total" => array(
-        "withtax" => "231700"
-    )
+$values = array(
+    "number" => "1000235"
 );
 
-echo $api->getTerms($values);
+print_r($api->getPaymentinfo($values));

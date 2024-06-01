@@ -13,23 +13,13 @@ define("QVICKLY_LANGUAGE", "sv");
 $api = new PaymentAPI($id, $key, $test, $debug);
 $values = array();
 
-/* Payment Data */
+/* Customer Data */
 /**
-* @param array Payment Data : Buyer details.
+* @param array Customer Data : Customer details.
   */
 
-  $values["PaymentData"] = array(
-    "method" => "1",
-    "paymentplanid" => ""
-);
-/**
-* @param array Cart Data : Cart details.
-  */
-
-$values["Cart"] = array(
-    "Total" => array(
-        "withtax" => "231700"
-    )
+$values = array(
+    "name" => "Tess"
 );
 
-echo $api->getTerms($values);
+print_r($api->getCustomersByName($values));
