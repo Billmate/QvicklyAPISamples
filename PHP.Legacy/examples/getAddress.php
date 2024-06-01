@@ -23,4 +23,4 @@ $values = array(
     "country" => "SE"
 );
 
-print_r($api->getAddress($values));
+echo json_encode($api->getAddress($values), JSON_PRETTY_PRINT);

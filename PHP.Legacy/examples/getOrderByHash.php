@@ -15,4 +15,4 @@ $values = array();
 
 $values["hash"] = "123456abc123456abc123456abc12345";
 
-print_r($api->getOrderByHash($values));
+echo json_encode($api->getOrderByHash($values), JSON_PRETTY_PRINT);

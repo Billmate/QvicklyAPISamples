@@ -22,4 +22,4 @@ $values = array();
     "dueDate" => "2020-01-01"
 );
 
-print_r($api->getDuePayments($values));
+echo json_encode($api->getDuePayments($values), JSON_PRETTY_PRINT);

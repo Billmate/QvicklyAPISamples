@@ -13,4 +13,4 @@ define("QVICKLY_LANGUAGE", "sv");
 $api = new PaymentAPI($id, $key, $test, $debug);
 $values = array();
 
-print_r($api->getFees($values));
+echo json_encode($api->getFees($values), JSON_PRETTY_PRINT);

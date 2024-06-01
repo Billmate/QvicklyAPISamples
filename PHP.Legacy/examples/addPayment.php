@@ -130,4 +130,4 @@ $values["Cart"] = array(
     )
 );
 
-print_r($api->addPayment($values));
+echo json_encode($api->addPayment($values), JSON_PRETTY_PRINT);

@@ -17,4 +17,4 @@ $values = array(
     "date" => "2024-04-30"
 );
 
-print_r($api->getExchangeRate($values));
+echo json_encode($api->getExchangeRate($values), JSON_PRETTY_PRINT);

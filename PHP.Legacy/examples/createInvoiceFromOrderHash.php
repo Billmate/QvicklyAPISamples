@@ -18,4 +18,4 @@ $values["PaymentData"] = array(
     "method" => "8"
 );
 
-print_r($api->createInvoiceFromOrderHash($values));
+echo json_encode($api->createInvoiceFromOrderHash($values), JSON_PRETTY_PRINT);

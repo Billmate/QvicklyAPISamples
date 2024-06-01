@@ -17,4 +17,4 @@ $values = array(
     "customerno" => "12345"
 );
 
-print_r($api->getInvoicesByCustomer($values));
+echo json_encode($api->getInvoicesByCustomer($values), JSON_PRETTY_PRINT);

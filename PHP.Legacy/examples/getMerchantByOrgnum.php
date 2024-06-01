@@ -17,4 +17,4 @@ $values = array(
     "orgnum" => "5555555555"
 );
 
-print_r($api->getMerchantByOrgnum($values));
+echo json_encode($api->getMerchantByOrgnum($values), JSON_PRETTY_PRINT);

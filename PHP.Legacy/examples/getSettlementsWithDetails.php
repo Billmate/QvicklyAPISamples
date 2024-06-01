@@ -18,4 +18,4 @@ $values = array(
     "settlementId" => "1"
 );
 
-print_r($api->getSettlementsWithDetails($values));
+echo json_encode($api->getSettlementsWithDetails($values), JSON_PRETTY_PRINT);

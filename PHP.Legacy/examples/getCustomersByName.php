@@ -22,4 +22,4 @@ $values = array(
     "name" => "Tess"
 );
 
-print_r($api->getCustomersByName($values));
+echo json_encode($api->getCustomersByName($values), JSON_PRETTY_PRINT);

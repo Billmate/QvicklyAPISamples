@@ -18,4 +18,4 @@ $values = array(
     "fromDate" => "2024-03-01"
 );
 
-print_r($api->getSettlements($values));
+echo json_encode($api->getSettlements($values), JSON_PRETTY_PRINT);

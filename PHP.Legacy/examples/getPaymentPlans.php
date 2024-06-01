@@ -26,4 +26,4 @@ $values["PaymentData"] = array(
     "totalwithtax" => "50000"
 );
 
-print_r($api->getPaymentplans($values));
+echo json_encode($api->getPaymentplans($values), JSON_PRETTY_PRINT);

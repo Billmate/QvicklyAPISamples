@@ -22,4 +22,4 @@ $values = array(
     "number" => "1000235"
 );
 
-print_r($api->getPaymentinfo($values));
+echo json_encode($api->getPaymentinfo($values), JSON_PRETTY_PRINT);

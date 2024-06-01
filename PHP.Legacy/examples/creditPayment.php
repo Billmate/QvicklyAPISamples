@@ -67,4 +67,4 @@ $values["Cart"] = array(
     )
 );
 
-print_r($api->creditPayment($values));
+echo json_encode($api->creditPayment($values), JSON_PRETTY_PRINT);

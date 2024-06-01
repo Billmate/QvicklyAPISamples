@@ -18,4 +18,4 @@ $values = array(
     "country" => "FI"
 );
 
-print_r($api->getVatRate($values));
+echo json_encode($api->getVatRate($values), JSON_PRETTY_PRINT);

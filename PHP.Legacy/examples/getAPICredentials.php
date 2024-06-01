@@ -17,4 +17,4 @@ $values = array(
     "eid" => "23456"
 );
 
-print_r($api->getAPICredentials($values));
+echo json_encode($api->getAPICredentials($values), JSON_PRETTY_PRINT);

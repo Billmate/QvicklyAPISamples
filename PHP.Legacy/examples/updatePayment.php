@@ -113,4 +113,4 @@ $values["Cart"] = array(
     )
 );
 
-print_r($api->updatePayment($values));
+echo json_encode($api->updatePayment($values), JSON_PRETTY_PRINT);

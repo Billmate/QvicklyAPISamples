@@ -18,4 +18,4 @@ $values = array(
     "status" => "Sent,Paid"
 );
 
-print_r($api->getInvoicesByPno($values));
+echo json_encode($api->getInvoicesByPno($values), JSON_PRETTY_PRINT);

@@ -16,4 +16,4 @@ $values = array(
     "orgnum" => "5566779988"
 );
 
-print_r($api->crediflowSearchParty($values));
+echo json_encode($api->crediflowSearchParty($values), JSON_PRETTY_PRINT);
