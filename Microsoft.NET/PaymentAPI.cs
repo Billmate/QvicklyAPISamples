@@ -50,7 +50,7 @@ public class PaymentAPI
             REFERER.Add("QVICKLY_CLIENT", "Qvickly:CSharp:2.2.0");
 
         if (!REFERER.ContainsKey("QVICKLY_SERVER"))
-            REFERER.Add("QVICKLY_SERVER", "2.3.0");
+            REFERER.Add("QVICKLY_SERVER", "2.5.0");
 
         if (!REFERER.ContainsKey("QVICKLY_LANGUAGE"))
             REFERER.Add("QVICKLY_LANGUAGE", "");

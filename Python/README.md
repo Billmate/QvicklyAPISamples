@@ -10,4 +10,4 @@
 
 | Lib                                | Version | Status                                  | Description |
 | ---------------------------------- | ------- | --------------------------------------- | ----------- |
-| [PaymentAPI](examples/PaymentAPI/) | 1.0.0   | 25/27 functions are tested and verified |             |
+| [PaymentAPI](examples/PaymentAPI/) | 1.0.0   | 26/26 functions are tested and verified |             |
