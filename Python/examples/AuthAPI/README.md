@@ -1,0 +1,18 @@
+# Python examples for Qvickly AuthAPI
+
+| Function                  | Description |
+| ------------------------- | ----------- |
+| [login](AuthAPI/login.py) | Basic login |
+
+### .env
+
+EID and SECRET is designed to be put in a .env file located in the parent directory.
+
+Here is an example .env file.
+
+```env
+USERNAME=username
+PASSWORD=password
+```
+
+Add your own credentials to make it work.

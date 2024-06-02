@@ -5,3 +5,9 @@
 | Function               | Description         |
 | ---------------------- | ------------------- |
 | [Examples](PaymentAPI) | PaymentAPI examples |
+
+## AuthAPI
+
+| Function            | Description      |
+| ------------------- | ---------------- |
+| [Examples](AuthAPI) | AuthAPI examples |
