@@ -1,12 +1,14 @@
 # PHP Legacy
 
-Legacy PHP code written for PHP5.
+Legacy PHP code was originally written for PHP 5.x but has been updated to work better with PHP 8.x
 
 ## Libraries
 
 | Lib                           | Version | Status             | Description                                                                                                                                            |
 | ----------------------------- | ------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [Payment API](PaymentAPI.php) | 2.2.0   | Basic testing done | Rebranded code originally named Billmate.php. The code has been slightly updated to better work with PHP 8.x but it's still being old code style wise. |
+| [Payment API](PaymentAPI.php) | 2.2.1   | Basic testing done | Rebranded code originally named Billmate.php. The code has been slightly updated to better work with PHP 8.x but it's still being old code style wise. |
+
+> The Legacy PHP only contains code supporting the Payment API
 
 ## Examples
 
