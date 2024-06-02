@@ -1,8 +1,8 @@
 # Python examples for Qvickly AuthAPI
 
-| Function                  | Description |
-| ------------------------- | ----------- |
-| [login](AuthAPI/login.py) | Basic login |
+| Function          | Description |
+| ----------------- | ----------- |
+| [login](login.py) | Basic login |
 
 ### .env
 
