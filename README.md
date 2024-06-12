@@ -17,6 +17,8 @@ All code has its root in the old PHP code. This means that there might be wierd 
 
 ## Status
 
+### Payment API
+
 | Language                       | Version | Status   | Released   | Updateed   | Comment                                                                                    |
 | ------------------------------ | ------- | -------- | ---------- | ---------- | ------------------------------------------------------------------------------------------ |
 | [Python3](Python)              | 1.0.0   | Verified | 2024-05-06 |            | New and updated code.                                                                      |
@@ -26,3 +28,23 @@ All code has its root in the old PHP code. This means that there might be wierd 
 | [PHP Legacy](PHP.Legacy)       | 2.2.1   | Verified | 2014-06-25 | 2024-06-01 | Based on old legacy code.                                                                  |
 | [Microsoft.NET](Microsoft.NET) | 2.0.1   | Outdated |            |            | Old legacy code. Should only be used for inspiration. New code base is a work in progress. |
 | [PHP](PHP)                     | 3.0.0   | Draft    |            |            | New and updated code for PHP8.x. This is currently a work in progress.                     |
+
+### Checkout API
+
+Work in progress
+
+### Auth API
+
+Work in progress
+
+### Paylink API
+
+Work in progress
+
+### Portal API
+
+Work in progress
+
+### MyQvickly API
+
+Work in progress
