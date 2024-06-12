@@ -13,5 +13,7 @@ from PaymentAPI import PaymentAPI
 
 # Create a PaymentAPI object
 api = PaymentAPI(eid, secret)
-account = api.call(function="getAccountinfo")
+account = api.call(function="getAccountinfo", data={
+    "comingFromPF2": "1"
+})
 print(json.dumps(account, indent=4))

@@ -12,5 +12,5 @@ define("QVICKLY_CLIENT", "Pluginname:Qvickly:1.0");
 define("QVICKLY_LANGUAGE", "sv");
 $api = new PaymentAPI($id, $key, $test, $debug);
 $values = array();
-
+$values['comingFromPF2'] = "1";
 echo json_encode($api->getAccountinfo($values), JSON_PRETTY_PRINT);
