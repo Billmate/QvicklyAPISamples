@@ -27,7 +27,7 @@ paymentPayload = {
         "callbackurl": "https://example.com/callback",
     },
     "Customer": {
-        "pno": "6805154918",
+        "pno": "550101-1018",
         "Billing": {
             "firstname": "Tess T",
             "lastname": "Person",
