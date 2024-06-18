@@ -100,6 +100,10 @@ sub call {
 sub verify_hash {
     my ($self, $response) = @_;
 
+    if ((ref $response ne 'HASH') && ($response =~ m/^[^\{]/)) {
+        return $response
+    }
+
     my $response_array = ref $response eq 'HASH' ? $response : decode_json($response);
 
     unless ($response_array) {
@@ -114,6 +118,9 @@ sub verify_hash {
     if (exists $response_array->{credentials}) {
         if (ref ($response) ne 'HASH') {
             my $data = substr($response, index($response, ',"data":{') + 8);
+            if($data =~ m/,"data":\[/) {
+                $data = substr($response, index($response, ',"data":[') + 8);
+            }
             $data = substr($data, 0, -1);
             my $hash = $self->hash($data);
             if($response_array->{credentials}->{hash} eq $self->hash($data)) {

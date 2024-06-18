@@ -10,6 +10,6 @@ This is a very rudimentary implementation of our API. It's by no means a perfect
 
 ## Examples
 
-| Lib                               | Version | Status                         | Description |
-| --------------------------------- | ------- | ------------------------------ | ----------- |
-| [PaymentAPI](examples/PaymentAPI) | 1.0.0   | 1/26 functions are implemented |             |
+| Lib                               | Version | Status                          | Description |
+| --------------------------------- | ------- | ------------------------------- | ----------- |
+| [PaymentAPI](examples/PaymentAPI) | 1.0.0   | 18/26 functions are implemented |             |
