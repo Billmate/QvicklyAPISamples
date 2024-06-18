@@ -31,6 +31,7 @@ use Tie::IxHash;
 use Monkey::Patch qw[patch_package];
 
 # Monkey-patch JSON::PP::object() subroutine to use Tie::IxHash.
+# Idea borrowed from https://stackoverflow.com/questions/51366750/perl-decode-and-encode-json-preserving-order#answer-77079473
 my $handle = patch_package 'JSON::PP' => 'object' => sub {
     my $orig = shift;
     my %obj;
