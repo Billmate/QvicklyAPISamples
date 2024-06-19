@@ -13,3 +13,10 @@ This is a very rudimentary implementation of our API. It's by no means a perfect
 | Lib                               | Version | Status                          | Description |
 | --------------------------------- | ------- | ------------------------------- | ----------- |
 | [PaymentAPI](examples/PaymentAPI) | 1.0.0   | 18/26 functions are implemented |             |
+
+## Extra files and their usage
+
+| File                             | Used in lib | Used in examples | Description                                                                                  |
+| -------------------------------- | ----------- | ---------------- | -------------------------------------------------------------------------------------------- |
+| [LoadEnv.pl](LoadEnv.pl)         | No          | Yes              | Simple implementation of loading keys and values into environment                            |
+| [TieThisHash.pm](TieThisHash.pm) | No          | Yes              | A simple function that copies a hash to a "tied" hash to make more complex structures easier |
