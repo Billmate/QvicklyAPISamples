@@ -17,6 +17,7 @@
 #
 # History:
 # 1.0.0 20240616 Thomas Björk: First version
+# 1.0.1 20240619 Thomas Björk: Extensive use of Tie::IxHash to preserve the order of the keys
 #
 package PaymentAPI;
 
@@ -24,11 +25,13 @@ use strict;
 use warnings;
 use JSON::PP;
 use LWP::UserAgent;
+use Data::Dumper;
 use Digest::SHA qw(hmac_sha512_hex);
 use Encode qw(decode_utf8);
-
 use Tie::IxHash;
 use Monkey::Patch qw[patch_package];
+use lib '.';
+use TieThisHash;
 
 # Monkey-patch JSON::PP::object() subroutine to use Tie::IxHash.
 # Idea borrowed from https://stackoverflow.com/questions/51366750/perl-decode-and-encode-json-preserving-order#answer-77079473
@@ -41,7 +44,7 @@ my $handle = patch_package 'JSON::PP' => 'object' => sub {
 
 use constant {
     QVICKLY_SERVER => "2.5.0",
-    QVICKLY_CLIENT => "Qvickly:Perl:1.0.0",
+    QVICKLY_CLIENT => "Qvickly:Perl:1.0.1",
     QVICKLY_LANGUAGE => "sv"
 };
 
@@ -71,20 +74,20 @@ sub new {
 sub call {
     my ($self, $function, $params) = @_;
 
-    my $values = {
-        credentials => {
+    my $values = {};
+    tie %$values, 'Tie::IxHash' or die "tie(\%values, 'Tie::IxHash') failed!\n";
+    $values->{"credentials"} = {
             id => $self->{ID},
             hash => $self->hash(encode_json($params)),
             version => $self->{VERSION},
             client => $self->{CLIENT},
-            serverdata => $self->{REFERER} ? { %ENV, %{$self->{REFERER}} } : \%ENV,
+            # serverdata => $self->{REFERER} ? { %ENV, %{$self->{REFERER}} } : \%ENV,
             time => time(),
             test => $self->{TEST} ? '1' : '0',
             language => $self->{LANGUAGE},
-        },
-        data => $params,
-        function => $function,
-    };
+        };
+    $values->{"data"} = $params;
+    $values->{"function"} = $function;
 
     $self->out('CALLED FUNCTION', $function);
     $self->out('PARAMETERS TO BE SENT', $values);
@@ -105,7 +108,6 @@ sub verify_hash {
     }
 
     my $response_array = ref $response eq 'HASH' ? $response : decode_json($response);
-
     unless ($response_array) {
         return $response;
     }
