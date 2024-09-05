@@ -8,7 +8,7 @@ require "PaymentAPI.pl";
 require "LoadEnv.pl";
 LoadEnv('../../.env');
 
-my $test = 1;
+my $test = 0;
 my $debug = 0;
 
 # Credentials for Auth
